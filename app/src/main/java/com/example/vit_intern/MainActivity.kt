@@ -22,9 +22,29 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onStart() {
+        super.onStart()
+        Log.i("MainActivity","the activity has started")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.e("MainActivity","the activity is paused")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i("MainActivity","The function has resumed")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.w("MainActivity","The function has destroyed")
+    }
+
     fun clickHandler(view: View) {
         Log.i("MainActivity", "clickHandler: button clicked ")
-        var dialIntent: Intent= Intent(Intent.ACTION_DIAL)
+        var dialIntent: Intent= Intent(Intent.ACTION_DIAL, Uri.parse("tel:9876543210"))
         startActivity(dialIntent)
     }
 
