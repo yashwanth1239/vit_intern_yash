@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun clickHandler(view: View) {
+
         Log.i("MainActivity", "clickHandler: button clicked ")
         var dialIntent: Intent= Intent(Intent.ACTION_DIAL, Uri.parse("tel:9876543210"))
         startActivity(dialIntent)
